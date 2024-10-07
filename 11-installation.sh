@@ -22,6 +22,7 @@ then
         exit 1
     else
         echo "git installation is done"
+    fi
 
 
 else 
