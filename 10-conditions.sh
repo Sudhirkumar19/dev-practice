@@ -2,10 +2,10 @@
 
 Number=$1
 
-if [$Number -gt 20 ]
+if [ $Number -gt 20 ]
 
 then
-    echo " given number : $Number=MBER is greater than 20"
+    echo " given number : $Number is greater than 20"
 
 else
     echo "given number : $Number= IS LESS than 20"
