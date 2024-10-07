@@ -23,7 +23,7 @@ fi
 
 dnf list installed git
 
-#VALIDATE $? "listing git"
+VALIDATE $? "listing git"
 
 if [ $? -ne 0 ]
 then
