@@ -55,7 +55,7 @@ do
     if [ $? -ne 0 ]
     then
         echo " $package is not installed, going to install it..." &>>$LOG_FILE
-        dnf install $package -y &>>$LOG_FILE
+        dnf install $package -y &>> $LOG_FILE
         VALIDATE $? "Installing $package"
 
 
