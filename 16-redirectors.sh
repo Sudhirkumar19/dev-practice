@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOGS_FOLDER="var/log/shell-script"
+LOGS_FOLDER="/var/log/shell-script"
 
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -38,7 +38,7 @@ USAGE(){
     echo -e "$R USAGE:: sudo sh 16-redirectors.sh package1 package2 ... $N "
     exit 1
 }
-echo -e "$G script started executing at: $N $date"&>>$LOG_FILE
+echo -e "$G script started executing at: $N $(date)"&>>$LOG_FILE
 CHECK_ROOT
 
 if [ $# -eq 0 ]
