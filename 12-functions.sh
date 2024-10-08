@@ -3,7 +3,7 @@
 USERID=$(id -u)
 #echo "user ID is: $USERID"
 
-VALIDATE(){
+VALIDATE_sudhir(){
     #echo "exit status : $1"
     if [ $1 -ne 0]
     then 
@@ -29,7 +29,7 @@ if [ $? -ne 0 ]
 then
     echo " git is not installed, going to install it..."
     dnf install git -y
-    VALIDATE $? "Installing git"
+    VALIDATE_sudhir $? "Installing git"
 
 
 else 
@@ -42,7 +42,7 @@ if [ $? -ne 0 ]
 then
     echo "MYSQL is not installed"
     dnf install mysql -y
-    VALIDATE $? "Installing MySQL"
+    VALIDATE_sudhir $? "Installing MySQL"
 else
     echo "MySQL is already installed"
 fi
