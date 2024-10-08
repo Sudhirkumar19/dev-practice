@@ -29,7 +29,7 @@ if [ $? -ne 0 ]
 then
     echo " git is not installed, going to install it..."
     dnf install git -y
-    VALIDATE_sudhir $? "Installing git"
+    VALIDATE_sudhir $? "Installing git"   #VALIDATE_sudhir is a function call
 
 
 else 
