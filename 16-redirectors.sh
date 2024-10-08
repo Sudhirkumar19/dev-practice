@@ -33,23 +33,33 @@ VALIDATE(){
         echo -e "$2 is $G success $N" &>>$LOG_FILE
     fi
 }
+
+USAGE(){
+    echo -e "$R USAGE:: sudo sh 16-redirectors.sh package1 package2 ... $N "
+    exit 1
+}
 CHECK_ROOT
+
+if [$# -eq 0]
+then
+    USAGE
+fi
 
 # sh 15-llops.sh git mysql  postfix nginx
 for package in $@ # $@ refers to all arguments passed to it'
 do
-    dnf list installed $package #JUST CHECKING whether installed or not
+    dnf list installed $package &>>$LOG_FILE  #JUST CHECKING whether installed or not
 
 #VALIDATE $? "listing git"
 
     if [ $? -ne 0 ]
     then
-        echo " $package is not installed, going to install it..."
-        dnf install $package -y
+        echo " $package is not installed, going to install it..." &>>$LOG_FILE
+        dnf install $package -y &>>$LOG_FILE
         VALIDATE $? "Installing $package"
 
 
     else 
-        echo " $package already installed, nothing to do..."
+        echo " $package already installed, nothing to do..." &>>$LOG_FILE
     fi
 done
