@@ -16,7 +16,7 @@ N="\e[33m"
 CHECK_ROOT(){
 if [ $USERID -ne 0 ]
 then
-    echo  -e "$R please run script with roogt permissions $N" | tee -a &>>$LOG_FILE
+    echo  -e "$R please run script with roogt permissions $N" | tee -a $LOG_FILE
 
     exit 1
 fi
@@ -27,15 +27,15 @@ VALIDATE(){
     #echo "exit status : $1"
     if [ $1 -ne 0 ]
     then 
-        echo -e "$2 is $R failed $N" &>>$LOG_FILE | tee -a &>>$LOG_FILE
+        echo -e "$2 is $R failed $N" &>>$LOG_FILE | tee -a $LOG_FILE
         exit 1
     else
-        echo -e "$2 is $G success $N" &>>$LOG_FILE | tee -a &>>$LOG_FILE
+        echo -e "$2 is $G success $N" &>>$LOG_FILE | tee -a $LOG_FILE
     fi
 }
 
 USAGE(){
-    echo -e "$R USAGE:: sudo sh 16-redirectors.sh package1 package2 ... $N " | tee -a &>>$LOG_FILE
+    echo -e "$R USAGE:: sudo sh 16-redirectors.sh package1 package2 ... $N " | tee -a $LOG_FILE
     exit 1
 }
 echo -e "$G script started executing at: $N $(date)"&>>$LOG_FILE 
