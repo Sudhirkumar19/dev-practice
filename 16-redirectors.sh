@@ -61,6 +61,6 @@ do
 
 
     else 
-        echo " $package already installed, nothing to do..." &>>$LOG_FILE
+        echo " $package already installed, nothing to do..." | tee -a $LOG_FILE
     fi
 done
